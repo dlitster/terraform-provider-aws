@@ -121,6 +121,14 @@ resource "aws_batch_compute_environment" "sample" {
     ]
 
     type = "EC2"
+
+    tags = {
+      Name = "batch-compute-instance"
+    }  
+  }
+
+  tags = {
+    Name = "batch-compute-environment"
   }
 
   service_role = aws_iam_role.aws_batch_service_role.arn
